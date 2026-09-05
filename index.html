@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Noir & Bean Café</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            NOIR <span>&</span> BEAN
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#story">Our Story</a>
+
+        </div>
+
+        <button class="cart-button" onclick="openCart()">
+
+            <span>Order</span>
+
+            <div class="cart-count" id="cartCount">
+                0
+            </div>
+
+        </button>
+
+    </nav>
+
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                EST. 2024 · BATANGAS
+            </p>
+
+            <h1>
+                Coffee worth<br>
+                <em>slowing down for.</em>
+            </h1>
+
+            <p class="hero-description">
+                Specialty coffee, handcrafted pastries,
+                and comfort food made for slow mornings
+                and long conversations.
+            </p>
+
+            <a href="#menu" class="hero-button">
+                Explore Our Menu
+                <span>↓</span>
+            </a>
+
+        </div>
+
+        <div class="scroll-text">
+            SCROLL TO DISCOVER
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         INTRO
+    ========================== -->
+
+    <section class="intro" id="story">
+
+        <div class="intro-small">
+            OUR PHILOSOPHY
+        </div>
+
+        <h2>
+            Simple ingredients.<br>
+            <em>Beautifully made.</em>
+        </h2>
+
+        <p>
+            At Noir & Bean, we believe good food doesn't need
+            to be complicated. Every cup, pastry, and plate is
+            prepared with intention—from the first pour to the
+            last bite.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <section class="menu" id="menu">
+
+        <div class="menu-heading">
+
+            <div>
+                <p class="eyebrow dark">
+                    THE MENU
+                </p>
+
+                <h2>
+                    Made fresh,<br>
+                    <em>served beautifully.</em>
+                </h2>
+            </div>
+
+            <p class="menu-description">
+                Browse our selection of specialty coffee,
+                freshly baked pastries, and all-day favorites.
+            </p>
+
+        </div>
+
+
+
+        <!-- CATEGORY FILTER -->
+
+        <div class="categories">
+
+            <button
+                class="category active"
+                onclick="filterMenu('all', this)">
+                All
+            </button>
+
+            <button
+                class="category"
+                onclick="filterMenu('coffee', this)">
+                Coffee
+            </button>
+
+            <button
+                class="category"
+                onclick="filterMenu('food', this)">
+                Food
+            </button>
+
+            <button
+                class="category"
+                onclick="filterMenu('pastry', this)">
+                Pastries
+            </button>
+
+            <button
+                class="category"
+                onclick="filterMenu('dessert', this)">
+                Desserts
+            </button>
+
+        </div>
+
+
+
+        <!-- MENU GRID -->
+
+        <div class="menu-grid" id="menuGrid">
+
+
+            <!-- ITEM 1 -->
+
+            <article
+                class="menu-card"
+                data-category="coffee"
+                onclick="showItem(1)">
+
+                <div class="card-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=85"
+                        alt="Spanish Latte">
+
+                    <span class="popular">
+                        BESTSELLER
+                    </span>
+
+                </div>
+
+                <div class="card-info">
+
+                    <div>
+
+                        <h3>
+                            Spanish Latte
+                        </h3>
+
+                        <p>
+                            Espresso · Milk · Condensed Milk
+                        </p>
+
+                    </div>
+
+                    <strong>
+                        ₱160
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ITEM 2 -->
+
+            <article
+                class="menu-card"
+                data-category="coffee"
+                onclick="showItem(2)">
+
+                <div class="card-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85"
+                        alt="Iced Coffee">
+
+                </div>
+
+                <div class="card-info">
+
+                    <div>
+
+                        <h3>
+                            Iced Caramel Macchiato
+                        </h3>
+
+                        <p>
+                            Espresso · Vanilla · Caramel
+                        </p>
+
+                    </div>
+
+                    <strong>
+                        ₱175
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ITEM 3 -->
+
+            <article
+                class="menu-card"
+                data-category="pastry"
+                onclick="showItem(3)">
+
+                <div class="card-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=85"
+                        alt="Croissant">
+
+                </div>
+
+                <div class="card-info">
+
+                    <div>
+
+                        <h3>
+                            Butter Croissant
+                        </h3>
+
+                        <p>
+                            French Butter · Flaky Pastry
+                        </p>
+
+                    </div>
+
+                    <strong>
+                        ₱120
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ITEM 4 -->
+
+            <article
+                class="menu-card"
+                data-category="food"
+                onclick="showItem(4)">
+
+                <div class="card-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=85"
+                        alt="Pasta">
+
+                </div>
+
+                <div class="card-info">
+
+                    <div>
+
+                        <h3>
+                            Creamy Truffle Pasta
+                        </h3>
+
+                        <p>
+                            Cream · Parmesan · Truffle Oil
+                        </p>
+
+                    </div>
+
+                    <strong>
+                        ₱295
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ITEM 5 -->
+
+            <article
+                class="menu-card"
+                data-category="food"
+                onclick="showItem(5)">
+
+                <div class="card-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85"
+                        alt="Breakfast Bowl">
+
+                </div>
+
+                <div class="card-info">
+
+                    <div>
+
+                        <h3>
+                            Harvest Breakfast Bowl
+                        </h3>
+
+                        <p>
+                            Eggs · Avocado · Greens · Toast
+                        </p>
+
+                    </div>
+
+                    <strong>
+                        ₱260
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ITEM 6 -->
+
+            <article
+                class="menu-card"
+                data-category="dessert"
+                onclick="showItem(6)">
+
+                <div class="card-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"
+                        alt="Chocolate Cake">
+
+                </div>
+
+                <div class="card-info">
+
+                    <div>
+
+                        <h3>
+                            Dark Chocolate Cake
+                        </h3>
+
+                        <p>
+                            Belgian Chocolate · Cream
+                        </p>
+
+                    </div>
+
+                    <strong>
+                        ₱185
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            NOIR <span>&</span> BEAN
+        </div>
+
+        <p>
+            Good coffee. Good food. Good company.
+        </p>
+
+        <div class="copyright">
+            © 2026 Noir & Bean Café
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         ITEM MODAL
+    ========================== -->
+
+    <div
+        class="modal"
+        id="itemModal"
+        onclick="closeModal(event)">
+
+        <div
+            class="modal-box"
+            onclick="event.stopPropagation()">
+
+            <button
+                class="close-button"
+                onclick="closeItem()">
+                ×
+            </button>
+
+            <img
+                id="modalImage"
+                src=""
+                alt="">
+
+            <div class="modal-content">
+
+                <p
+                    class="modal-category"
+                    id="modalCategory">
+                    COFFEE
+                </p>
+
+                <h2 id="modalName">
+                    Spanish Latte
+                </h2>
+
+                <p
+                    class="modal-description"
+                    id="modalDescription">
+                    Rich espresso blended with creamy
+                    milk and condensed milk.
+                </p>
+
+                <div class="modal-bottom">
+
+                    <strong id="modalPrice">
+                        ₱160
+                    </strong>
+
+                    <button
+                        class="add-button"
+                        onclick="addToCart()">
+                        Add to Order +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         CART
+    ========================== -->
+
+    <div
+        class="cart-panel"
+        id="cartPanel">
+
+        <div class="cart-header">
+
+            <h2>
+                Your Order
+            </h2>
+
+            <button onclick="closeCart()">
+                ×
+            </button>
+
+        </div>
+
+        <div
+            class="cart-items"
+            id="cartItems">
+
+            <p class="empty-cart">
+                Your order is empty.
+            </p>
+
+        </div>
+
+        <div class="cart-footer">
+
+            <div class="total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="cartTotal">
+                    ₱0
+                </strong>
+
+            </div>
+
+            <button class="checkout-button">
+                Place Order
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="cart-overlay"
+        id="cartOverlay"
+        onclick="closeCart()">
+    </div>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
